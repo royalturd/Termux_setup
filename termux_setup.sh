@@ -5,6 +5,13 @@ RED='\033[0;31m' # Red
 NC='\033[0m' # No Color
 clear
 
+#timestamp
+TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
+echo "$TIMESTAMP"
+
+sleep 2s
+
+#Device info 
 echo -e "DEVICE INFORMATION"
 
 ver=V1.0_RC
