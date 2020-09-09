@@ -1,9 +1,11 @@
-#!/system/bin/sh
+#!/system/bin/sh3o
 # Get a Termux environment set up quickly
 
 RED='\033[0;31m' # Red
 NC='\033[0m' # No Color
 clear
+
+echo -e "DEVICE INFORMATION"
 
 ver=V1.0_RC
 vendor=$( getprop ro.product.brand)
@@ -11,15 +13,22 @@ model=$( getprop ro.product.model)
 rom=$( getprop ro.build.display.id)
 androidos=$( getprop ro.build.version.release)
 id=$(id); id=${id#*=}; id=${id%%[\( ]*}
+
+# Rooted
+if [ "$id" = "0" ] || [ "$id" = "root" ]; then
+rootin="Rooted "
+else
+rootin="\e ${RED} No Rooted\e ${NC}"
+fi;
   
  echo -e "Vendor: ${RED} $vendor ${NC}"
  echo -e "Model: ${RED} $model ${NC}"
  echo -e "ROM:  ${RED} $rom ${NC}"
  echo -e "Android Version: ${RED} $androidos ${NC}"
- 
+ echo -e "Root Info: ${RED} $rootin ${NC}" 
 sleep 3s
 
-echo " ${RED} make sure to have a worrking internet connection ${NC} "
+echo "  make sure to have a worrking internet connection  "
 
 sleep 2s
 
@@ -43,11 +52,11 @@ apt-get update&&apt-get upgrade
 
 # Install some packages
 echo "---------------------------"
-echo "installing some packages"
+echo "installing open ssh"
 echo "---------------------------"
 sleep 1s
 
-apt install -y nano git openssh python   python2  coreutils proot ruby  libllvm gsl g++ make libffi  termux-exec openssl libgmp libev c-ares-dev libcrypt-dev llvm
+pkg install openssh
 
 #install python3
 echo "$------------------"
@@ -85,6 +94,7 @@ export EDITOR='nano'
 #additional buttons
  
 #mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties; termux-reload-properties;
+
 
 #neo fetch 
 
