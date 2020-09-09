@@ -37,16 +37,12 @@ sleep 3s
 
 echo "  make sure to have a worrking internet connection  "
 
-#speedtest  (https://github.com/sivel/speedtest-cli)
+#install wget 
 
-echo -n "checking internet speed........."
-sleep 1s
-echo -e "Getting files......"
-sleep 1s
-wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
-chmod +x speedtest-cli
-./speedtest-cli
+ apt install wget
+
 sleep 2s
+
 
 # Get the storage set up
 echo "-------------------"
@@ -111,6 +107,18 @@ export EDITOR='nano'
  
 #mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties; termux-reload-properties;
 
+sleep 2s
+
+#speedtest  (https://github.com/sivel/speedtest-cli)
+
+echo -n "checking internet speed........."
+sleep 1s
+echo -e "Getting files......"
+sleep 1s
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+./speedtest-cli
+sleep 2s
 
 #neo fetch 
 
