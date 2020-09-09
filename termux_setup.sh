@@ -1,4 +1,4 @@
-#!/system/bin/sh3o
+#!/system/bin/sh
 # Get a Termux environment set up quickly
 
 RED='\033[0;31m' # Red
