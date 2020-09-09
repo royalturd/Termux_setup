@@ -1,6 +1,19 @@
-#!/data/data/com.termux/files/usr/bin/bash
+
+#!/system/bin/sh
 # Get a Termux environment set up quickly
 clear
+
+ver=V1.0_RC
+vendor=$( getprop ro.product.brand)
+model=$( getprop ro.product.model)
+rom=$( getprop ro.build.display.id)
+androidos=$( getprop ro.build.version.release)
+id=$(id); id=${id#*=}; id=${id%%[\( ]*}
+ 
+ echo "Vendor: $vendor"
+ echo "Model: $model"
+ echo "ROM: $rom"
+0 echo "Android Version: $androidos"
  
 # Get the storage set up
 termux-setup-storage
