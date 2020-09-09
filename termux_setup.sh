@@ -39,6 +39,10 @@ echo "  make sure to have a worrking internet connection  "
 
 #install wget 
 
+echo "-----------------"
+echo "installing Wget"
+echo "-----------------"
+
  apt install wget
 
 sleep 2s
@@ -46,7 +50,7 @@ sleep 2s
 
 # Get the storage set up
 echo "-------------------"
-echo  " setting up storage"
+echo "setting up storage"
 echo "-------------------"
 
 sleep 1s
@@ -55,7 +59,7 @@ termux-setup-storage
 #update
 
 echo  "--------------------"
-echo  "  updating termux"
+echo  "updating termux"
 echo  "--------------------"
 
 sleep 1s
@@ -71,8 +75,8 @@ sleep 1s
 pkg install openssh
 
 #install python3
-echo "$------------------"
-echo " installing python"
+echo "------------------"
+echo "installing python"
 echo "-------------------"
 
 sleep 1s
@@ -80,7 +84,7 @@ pkg install python
 
 #install git
 
-echo " -----------------"
+echo "-----------------"
 echo "installing git"
 echo "-----------------"
 
@@ -91,7 +95,7 @@ pkg install git
 
 #install nano 
 
-echo " ----------------------------"
+echo "----------------------------"
 echo "Installing nano text editor"
 echo "---------------------------"
 
@@ -104,9 +108,11 @@ pkg install nano
 export EDITOR='nano'
 
 #additional buttons
- 
-#mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties; termux-reload-properties;
 
+echo "-----------------------"
+echo "Adding more  buttons"
+echo "-----------------------" 
+mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" 
 sleep 2s
 
 #speedtest  (https://github.com/sivel/speedtest-cli)
@@ -133,7 +139,6 @@ echo "-----------------------------------------"
 
 sleep 5s
  echo " Have a nice day (◔‿◔) "
-sleep 3s
 
  exit
 
