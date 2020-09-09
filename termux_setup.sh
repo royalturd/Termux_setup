@@ -1,8 +1,8 @@
 #!/system/bin/sh
 # Get a Termux environment set up quickly
 
-RED='\033[0;31m'
-
+RED='\033[0;31m' # Red
+NC='\033[0m' # No Color
 clear
 
 ver=V1.0_RC
