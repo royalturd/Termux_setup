@@ -25,7 +25,7 @@ id=$(id); id=${id#*=}; id=${id%%[\( ]*}
 if [ "$id" = "0" ] || [ "$id" = "root" ]; then
 rootin="Rooted "
 else
-rootin="\e ${RED} No Rooted\e ${NC}"
+rootin="\e ${RED} Not Rooted\e ${NC}"
 fi;
   
  echo -e "Vendor: ${RED} $vendor ${NC}"
@@ -37,6 +37,15 @@ sleep 3s
 
 echo "  make sure to have a worrking internet connection  "
 
+#speedtest  (https://github.com/sivel/speedtest-cli)
+
+echo -n "checking internet speed........."
+sleep 1s
+echo -e "Getting files......"
+sleep 1s
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+./speedtest-cli
 sleep 2s
 
 # Get the storage set up
@@ -71,7 +80,7 @@ echo " installing python"
 echo "-------------------"
 
 sleep 1s
-pkg install python3
+pkg install python
 
 #install git
 
@@ -119,5 +128,4 @@ sleep 5s
 sleep 3s
 
  exit
-
 
