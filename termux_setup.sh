@@ -8,6 +8,9 @@ clear
 #timestamp
 TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
 echo "$TIMESTAMP"
+Time=$(TZ=Asia/kolkata date +'%H%M-%d%m%y')
+DATE=`date`
+START=$(date +"%s")
 
 sleep 2s
 
@@ -140,5 +143,9 @@ echo "-----------------------------------------"
 sleep 5s
  echo " Have a nice day (◔‿◔) "
 
+END=$(date +"%s")
+DIFF=$(($END - $START))
+
+echo " Time taken $DIFF "
  exit
 
