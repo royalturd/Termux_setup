@@ -13,7 +13,7 @@ id=$(id); id=${id#*=}; id=${id%%[\( ]*}
  echo "Vendor: $vendor"
  echo "Model: $model"
  echo "ROM: $rom"
-0 echo "Android Version: $androidos"
+ echo "Android Version: $androidos"
  
 # Get the storage set up
 termux-setup-storage
