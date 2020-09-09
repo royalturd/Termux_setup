@@ -1,11 +1,23 @@
 #!/system/bin/sh
 # Get a Termux environment set up quickly
 
+: <<'notice'
+ *
+ * Script information:
+ * Personal Termux-setup script.
+ *
+ * SPDX-License-Identifier: GPL-3.0
+ *
+ * Copyright (C) Rudra Pratap Singh <samridhh.rudra@hotmail.com>
+ *
+notice
+
 RED='\033[0;31m' # Red
 NC='\033[0m' # No Color
 clear
 
 #timestamp
+
 TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
 echo "$TIMESTAMP"
 Time=$(TZ=Asia/kolkata date +'%H%M-%d%m%y')
@@ -95,6 +107,14 @@ sleep 1s
 
 pkg install git
 
+#echo "-----------------"
+#echo "setting up git "
+#echo "-----------------"
+#sleep 1s
+
+#git config --global user.email "enter your email""
+#git config --global user.name "enter your name""
+
 
 #install nano 
 
@@ -107,9 +127,12 @@ sleep 1s
 pkg install nano
 
 #set nano as default editor  
-
+echo "---------------"
+echo "setting up nano"
+echo "---------------"
 export EDITOR='nano'
-
+git config --global core.editor "nano"
+sleep 1s
 #additional buttons
 
 echo "-----------------------"
@@ -146,6 +169,6 @@ sleep 5s
 END=$(date +"%s")
 DIFF=$(($END - $START))
 
-echo " Time taken $DIFF "
+echo " Time taken $DIFF s "
  exit
 
