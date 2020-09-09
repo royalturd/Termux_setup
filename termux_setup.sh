@@ -1,6 +1,8 @@
-
 #!/system/bin/sh
 # Get a Termux environment set up quickly
+
+RED='\033[0;31m'
+
 clear
 
 ver=V1.0_RC
@@ -10,20 +12,20 @@ rom=$( getprop ro.build.display.id)
 androidos=$( getprop ro.build.version.release)
 id=$(id); id=${id#*=}; id=${id%%[\( ]*}
   
- echo "Vendor: $vendor"
- echo "Model: $model"
- echo "ROM: $rom"
- echo "Android Version: $androidos"
+ echo -e "Vendor: ${RED} $vendor ${NC}"
+ echo -e "Model: ${RED} $model ${NC}"
+ echo -e "ROM:  ${RED} $rom ${NC}"
+ echo -e "Android Version: ${RED} $androidos ${NC}"
  
 sleep 3s
 
-echo "make sure to have a worrking internet connection "
+echo " ${RED} make sure to have a worrking internet connection ${NC} "
 
 sleep 2s
 
 # Get the storage set up
 echo "-------------------"
-echo  "setting up storage"
+echo  " setting up storage"
 echo "-------------------"
 
 sleep 1s
@@ -45,10 +47,10 @@ echo "installing some packages"
 echo "---------------------------"
 sleep 1s
 
-apt install -y nano git openssh python python-dev python2 python2-dev coreutils proot ruby ruby-dev libllvm gsl g++ make libffi libffi-dev termux-exec openssl-dev libgmp-dev libev-dev c-ares-dev libcrypt-dev llvm
+apt install -y nano git openssh python   python2  coreutils proot ruby  libllvm gsl g++ make libffi  termux-exec openssl libgmp libev c-ares-dev libcrypt-dev llvm
 
 #install python3
-echo " ------------------"
+echo "$------------------"
 echo " installing python"
 echo "-------------------"
 
@@ -57,7 +59,7 @@ pkg install python3
 
 #install git
 
-echo "-----------------"
+echo " -----------------"
 echo "installing git"
 echo "-----------------"
 
@@ -68,9 +70,9 @@ pkg install git
 
 #install nano 
 
-echo "----------------------------"
+echo " ----------------------------"
 echo "Installing nano text editor"
-echo "----------------------------"
+echo "---------------------------"
 
 sleep 1s
  
@@ -100,3 +102,5 @@ sleep 5s
 sleep 3s
 
  exit
+
+
