@@ -11,15 +11,22 @@
  * Copyright (C) Rudra Pratap Singh <samridhh.rudra@hotmail.com>
  *
 notice
-
-RED='\033[0;31m' # Red
-NC='\033[0m' # No Color
+# Color Code 
+Black='\e[0;30m'        # Black          
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+RED='\033[0;31m'        # Red
+NC='\033[0m'            # No Color
 clear
 
 #timestamp
 
 TIMESTAMP=`date "+%Y-%m-%d %H:%M:%S"`
-echo "$TIMESTAMP"
+echo -e "$Cyan  $TIMESTAMP $NC"
 Time=$(TZ=Asia/kolkata date +'%H%M-%d%m%y')
 DATE=`date`
 START=$(date +"%s")
@@ -50,13 +57,13 @@ fi;
  echo -e "Root Info: ${RED} $rootin ${NC}" 
 sleep 3s
 
-echo "  make sure to have a worrking internet connection  "
+echo -e "$Cyan make sure to have a worrking internet connection$NC "
 
 #install wget 
 
-echo "-----------------"
-echo "installing Wget"
-echo "-----------------"
+echo -e "$Blue-----------------"
+echo -e "installing Wget"
+echo -e "-----------------$NC"
 
  apt install wget
 
@@ -64,52 +71,52 @@ sleep 2s
 
 
 # Get the storage set up
-echo "-------------------"
-echo "setting up storage"
-echo "-------------------"
+echo -e "$Blue-------------------"
+echo -e "setting up storage"
+echo -e "-------------------$NC"
 
 sleep 1s
 termux-setup-storage
  
 #update
 
-echo  "--------------------"
-echo  "updating termux"
-echo  "--------------------"
+echo -e "$Blue--------------------"
+echo -e  "updating termux"
+echo -e "--------------------$NC"
 
 sleep 1s
 
 apt-get update&&apt-get upgrade
 
 # Install some packages
-echo "---------------------------"
-echo "installing open ssh"
-echo "---------------------------"
+echo -e "$Blue---------------------------"
+echo -e "installing openssh"
+echo -e "---------------------------$NC"
 sleep 1s
 
 pkg install openssh
 
 #install python3
-echo "------------------"
-echo "installing python"
-echo "-------------------"
+echo -e "$Blue------------------"
+echo -e "installing python"
+echo -e "-------------------$NC"
 
 sleep 1s
 pkg install python
 
 #install git
 
-echo "-----------------"
-echo "installing git"
-echo "-----------------"
+echo -e "$Blue-----------------"
+echo -e "installing git"
+echo -e "-----------------$NC"
 
 sleep 1s
 
 pkg install git
 
-#echo "-----------------"
-#echo "setting up git "
-#echo "-----------------"
+#echo -e "$Blue-----------------"
+#echo -e "setting up git "
+#echo -e "---------------$NC"
 #sleep 1s
 
 #git config --global user.email "enter your email""
@@ -118,34 +125,34 @@ pkg install git
 
 #install nano 
 
-echo "----------------------------"
-echo "Installing nano text editor"
-echo "---------------------------"
+echo -e "$Blue----------------------------"
+echo -e "Installing nano text editor"
+echo -e "---------------------------$NC"
 
 sleep 1s
  
 pkg install nano
 
 #set nano as default editor  
-echo "---------------"
-echo "setting up nano"
-echo "---------------"
+echo -e "$Blue---------------"
+echo -e "setting up nano"
+echo -e "---------------$NC"
 export EDITOR='nano'
 git config --global core.editor "nano"
 sleep 1s
 #additional buttons
 
-echo "-----------------------"
-echo "Adding more  buttons"
-echo "-----------------------" 
+echo -e "$Blue-----------------------"
+echo -e "Adding more  buttons"
+echo -e "-----------------------$NC" 
 mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" 
 sleep 2s
 
 #speedtest  (https://github.com/sivel/speedtest-cli)
 
-echo -n "checking internet speed........."
+echo -e  "$Green checking internet speed.........$NC"
 sleep 1s
-echo -e "Getting files......"
+echo  "Getting files......"
 sleep 1s
 wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x speedtest-cli
@@ -158,9 +165,9 @@ pkg install neofetch&&neofetch
 
 echo "That's all folks(°×°)"
 
-echo "-----------------------------------------"
-echo "https://github.com/royalturd/Termux_setup"
-echo "-----------------------------------------"
+echo -e "$Cyan-----------------------------------------"
+echo -e "https://github.com/royalturd/Termux_setup"
+echo -e "-----------------------------------------$NC"
 
 
 sleep 5s
@@ -169,6 +176,7 @@ sleep 5s
 END=$(date +"%s")
 DIFF=$(($END - $START))
 
-echo " Time taken $DIFF s "
+echo -e " Time taken $Cyan  $DIFF s $NC "
  exit
+
 
