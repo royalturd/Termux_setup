@@ -148,6 +148,13 @@ echo -e "-----------------------$NC"
 mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" 
 sleep 2s
 
+#gnupg
+echo -e "$Blue-----------------"
+echo -e "installing gnupg"
+echo -e "-----------------$NC"
+pkg install gnupg
+sleep 1s
+
 #speedtest  (https://github.com/sivel/speedtest-cli)
 
 read -p "  want to check your internet speed? " -n 1 -r
@@ -177,12 +184,11 @@ echo -e "-----------------------------------------$NC"
 
 
 sleep 5s
- echo " Have a nice day (◔‿◔) "
+echo " Have a nice day (◔‿◔) "
 
 END=$(date +"%s")
 DIFF=$(($END - $START))
 
 echo -e " Time taken $Cyan  $DIFF s $NC "
  exit
-
 
