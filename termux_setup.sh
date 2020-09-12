@@ -150,13 +150,19 @@ sleep 2s
 
 #speedtest  (https://github.com/sivel/speedtest-cli)
 
+read -p "  want to check your internet speed? " -n 1 -r
+if [[ ! $REPLY =~ ^[Nn]$ ]]
+then
+echo  " "
 echo -e  "$Green checking internet speed.........$NC"
 sleep 1s
+echo " "
 echo  "Getting files......"
 sleep 1s
 wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x speedtest-cli
 ./speedtest-cli
+fi;
 sleep 2s
 
 #neo fetch 
