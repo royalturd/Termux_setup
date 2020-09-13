@@ -57,9 +57,15 @@ fi;
  echo -e "Root Info: ${RED} $rootin ${NC}" 
 sleep 3s
 
-echo -e "$Cyan make sure to have a worrking internet connection$NC "
-
-#install wget 
+#connectivity
+ping -c 1 -W 0.7 8.8.4.4 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e  "$Green Online $NC"
+else
+    echo -e "$RED Offline $NC"
+exit
+fi
+#install wget
 
 echo -e "$Blue-----------------"
 echo -e "installing Wget"
@@ -190,5 +196,4 @@ END=$(date +"%s")
 DIFF=$(($END - $START))
 
 echo -e " Time taken $Cyan  $DIFF s $NC "
- exit
-
+exit
